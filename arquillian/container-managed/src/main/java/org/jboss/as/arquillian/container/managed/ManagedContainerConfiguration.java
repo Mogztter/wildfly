@@ -56,6 +56,8 @@ public class ManagedContainerConfiguration extends DistributionContainerConfigur
 
     private Integer waitForPortsTimeoutInSeconds;
 
+    private boolean cleanBeforeRunning = false;
+
     public ManagedContainerConfiguration() {
         super();
     }
@@ -175,4 +177,11 @@ public class ManagedContainerConfiguration extends DistributionContainerConfigur
         this.adminOnly = adminOnly;
     }
 
+    public boolean isCleanBeforeRunning() {
+        return cleanBeforeRunning;
+    }
+
+    public void setCleanBeforeRunning(boolean cleanBeforeRunning) {
+        this.cleanBeforeRunning = cleanBeforeRunning;
+    }
 }

@@ -51,6 +51,8 @@ public class ManagedDomainContainerConfiguration extends CommonDomainContainerCo
 
     private boolean enableAssertions = true;
 
+    private boolean cleanBeforeRunning = false;
+
     public ManagedDomainContainerConfiguration() {
         // if no javaHome is set use java.home of already running jvm
         if (javaHome == null || javaHome.isEmpty()) {
@@ -185,7 +187,7 @@ public class ManagedDomainContainerConfiguration extends CommonDomainContainerCo
     /**
      * Set the server configuration file name. Equivalent to [-Djboss.host.default.config=...] on the command line.
      *
-     * @param domainConfig the host xml file name
+     * @param hostConfig the host xml file name
      */
     public void setHostConfig(String hostConfig) {
         this.hostConfig = hostConfig;
@@ -209,5 +211,13 @@ public class ManagedDomainContainerConfiguration extends CommonDomainContainerCo
 
     public void setEnableAssertions(final boolean enableAssertions) {
         this.enableAssertions = enableAssertions;
+    }
+
+    public boolean isCleanBeforeRunning() {
+        return cleanBeforeRunning;
+    }
+
+    public void setCleanBeforeRunning(boolean cleanBeforeRunning) {
+        this.cleanBeforeRunning = cleanBeforeRunning;
     }
 }
