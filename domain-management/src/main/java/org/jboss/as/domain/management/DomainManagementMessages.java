@@ -638,28 +638,28 @@ public interface DomainManagementMessages {
     String passwordMustNotBeEqual(String password);
 
     /**
-     * The error message for password which has no digit.
-     *
+     * The error message for password which has not enough digit.
+     * @param minDigit - minimum digit values.
      * @return a {@link String} for the message.
      */
-    @Message(id = 15266, value = "Password must have at least one digit.")
-    String passwordMustHaveDigit();
+    @Message(id = 15266, value = "Password must have at least %d digit.")
+    String passwordMustHaveDigit(int minDigit);
 
     /**
-     * The error message for password which has no symbol.
-     *
+     * The error message for password which has not enough symbol.
+     * @param minSymbol - minimum symbol values.
      * @return a {@link String} for the message.
      */
-    @Message(id = 15267, value = "Password must have at least one non-alphanumeric symbol.")
-    String passwordMustHaveSymbol();
+    @Message(id = 15267, value = "Password must have at least %s non-alphanumeric symbol.")
+    String passwordMustHaveSymbol(int minSymbol);
 
     /**
-     * The error message for password which has no alpha numerical values.
-     *
+     * The error message for password which has not enough alpha numerical values.
+     * @param minAlpha - minimum alpha numerical values.
      * @return a {@link String} for the message.
      */
-    @Message(id = 15268, value = "Password must have at least one alphanumeric character.")
-    String passwordMustHaveAlpha();
+    @Message(id = 15268, value = "Password must have at least %d alphanumeric character.")
+    String passwordMustHaveAlpha(int minAlpha);
 
     /**
      * The error message for password which is not long enough.
@@ -861,11 +861,11 @@ public interface DomainManagementMessages {
     String argDisable();
 
     /**
-     * Instructions for the {@link org.jboss.as.domain.management.security.adduser.AddUser.CommandLineArgument#RELAX_PASSWORD} command line argument.
+     * Instructions for the {@link org.jboss.as.domain.management.security.adduser.AddUser.CommandLineArgument#CONFIRM_WARNING} command line argument.
      * @return the message.
      */
-    @Message(id = Message.NONE, value = "Relax password restrictions")
-    String argRelaxPassword();
+    @Message(id = Message.NONE, value = "Automatically confirm warning in interactive mode")
+    String argConfirmWarning();
 
     /**
      * Instructions for the {@link org.jboss.as.domain.management.security.adduser.AddUser.CommandLineArgument#HELP} command line argument.
